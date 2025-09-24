@@ -20,6 +20,10 @@ app.use(express.json());
 // Routes
 app.use('/api', uploadRoutes);
 
+app.get('/', (req, res) => {
+  res.status(200).send('<h1>Bulk Email Sender Backend is running!</h1><p>API is available at /api/upload-and-send</p>');
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
